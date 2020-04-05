@@ -63,8 +63,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ApplicationSettings.cs" />
-    <Compile Include="Assets\Scripts\Debugger.cs" />
+    <Compile Include="Assets\Scripts\Core\ApplicationSettings.cs" />
+    <Compile Include="Assets\Scripts\Core\Debugger.cs" />
+    <Compile Include="Assets\Scripts\Core\MonoSingleton.cs" />
+    <Compile Include="Assets\Scripts\Data\ISavable.cs" />
+    <Compile Include="Assets\Scripts\Data\SaveManager.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Gravity\Attractor.cs" />
+    <Compile Include="Assets\Scripts\Gravity\RocketAttractor.cs" />
+    <Compile Include="Assets\Scripts\Gun.cs" />
+    <Compile Include="Assets\Scripts\Movement\PlanetMovement.cs" />
+    <Compile Include="Assets\Scripts\Planet.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Rocket.cs" />
+    <Compile Include="Assets\Scripts\RocketDestroyer.cs" />
+    <Compile Include="Assets\Scripts\Spawner\ASpawner.cs" />
+    <Compile Include="Assets\Scripts\Spawner\PlanetSpawner.cs" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>C:/Projects/Orbitality/Orbitality/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>

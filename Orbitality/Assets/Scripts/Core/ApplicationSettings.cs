@@ -1,5 +1,4 @@
-﻿//Developed by Pavel Kravtsov.
-using UnityEngine;
+﻿using UnityEngine;
 namespace Core
 {
     public class ApplicationSettings : MonoBehaviour
