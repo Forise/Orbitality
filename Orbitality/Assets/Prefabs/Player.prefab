@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 5180777658133192033}
   - component: {fileID: 8963396062456590621}
   - component: {fileID: -3125355628905224067}
+  - component: {fileID: -979945615995668658}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -213,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 0
   planetMovement: {fileID: 2535746163380665891}
+  healthComponent: {fileID: -979945615995668658}
   gun: {fileID: 3560463047899411212}
   rocket: {fileID: 0}
   minSize: 0.5
@@ -244,6 +246,20 @@ MonoBehaviour:
   attractable: 0
   exeptions: []
   rb: {fileID: 4027356395192782398}
+--- !u!114 &-979945615995668658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5170396284754951027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42514f1bf2933e84a8c5747a25f72036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
 --- !u!1 &8010509117170757601
 GameObject:
   m_ObjectHideFlags: 0

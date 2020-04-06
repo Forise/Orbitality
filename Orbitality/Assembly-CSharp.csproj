@@ -66,12 +66,14 @@
     <Compile Include="Assets\Scripts\Core\ApplicationSettings.cs" />
     <Compile Include="Assets\Scripts\Core\Debugger.cs" />
     <Compile Include="Assets\Scripts\Core\MonoSingleton.cs" />
+    <Compile Include="Assets\Scripts\DamageComponent.cs" />
     <Compile Include="Assets\Scripts\Data\ISavable.cs" />
     <Compile Include="Assets\Scripts\Data\SaveManager.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Gravity\Attractor.cs" />
     <Compile Include="Assets\Scripts\Gravity\RocketAttractor.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
+    <Compile Include="Assets\Scripts\HealthComponent.cs" />
     <Compile Include="Assets\Scripts\Movement\PlanetMovement.cs" />
     <Compile Include="Assets\Scripts\Planet.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
@@ -121,6 +123,9 @@
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>C:/Projects/Orbitality/Orbitality/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:/Projects/Orbitality/Orbitality/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>C:/Projects/Orbitality/Orbitality/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
@@ -132,9 +137,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Projects/Orbitality/Orbitality/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Projects/Orbitality/Orbitality/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

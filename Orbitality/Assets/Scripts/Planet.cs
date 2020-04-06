@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlanetMovement)), RequireComponent(typeof(Gun))]
+[RequireComponent(typeof(PlanetMovement)), RequireComponent(typeof(Gun)), RequireComponent(typeof(HealthComponent))]
 public class Planet : MonoBehaviour
 {
     #region Fields
@@ -10,6 +10,8 @@ public class Planet : MonoBehaviour
     private float weight;
     [SerializeField]
     private PlanetMovement planetMovement;
+    [SerializeField]
+    private HealthComponent healthComponent;
     [SerializeField]
     private Gun gun;
     [SerializeField]
@@ -28,10 +30,31 @@ public class Planet : MonoBehaviour
     #region Unity Methods
     private void Awake()
     {
+        if(healthComponent == null)
+        {
+            healthComponent = gameObject.GetComponent<HealthComponent>();
+        }
+        if(gun == null)
+        {
+            gun = gameObject.GetComponent<Gun>();
+        }
+        if(planetMovement == null)
+        {
+            planetMovement = gameObject.GetComponent<PlanetMovement>();
+        }
         var size = Random.Range(minSize, maxSize);
         transform.localScale *= size;
         GetComponent<Rigidbody2D>().mass = size;
         planetMovement = planetMovement ?? GetComponent<PlanetMovement>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        DamageComponent damageComponent = collision.gameObject.GetComponent<DamageComponent>();
+        if (damageComponent != null)
+        {
+            healthComponent.Health -= damageComponent.damage;
+        }
     }
 
     #endregion Unity Methods
