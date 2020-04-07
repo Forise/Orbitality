@@ -65,22 +65,24 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Core\ApplicationSettings.cs" />
     <Compile Include="Assets\Scripts\Core\Debugger.cs" />
-    <Compile Include="Assets\Scripts\Core\MonoSingleton.cs" />
-    <Compile Include="Assets\Scripts\DamageComponent.cs" />
     <Compile Include="Assets\Scripts\Data\ISavable.cs" />
     <Compile Include="Assets\Scripts\Data\SaveManager.cs" />
-    <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Game\DamageComponent.cs" />
+    <Compile Include="Assets\Scripts\Game\GameController.cs" />
+    <Compile Include="Assets\Scripts\Game\Gun.cs" />
+    <Compile Include="Assets\Scripts\Game\HealthComponent.cs" />
+    <Compile Include="Assets\Scripts\Game\MonoSingleton.cs" />
+    <Compile Include="Assets\Scripts\Game\Planet.cs" />
+    <Compile Include="Assets\Scripts\Game\Player.cs" />
+    <Compile Include="Assets\Scripts\Game\Rocket.cs" />
+    <Compile Include="Assets\Scripts\Game\RocketDestroyer.cs" />
     <Compile Include="Assets\Scripts\Gravity\Attractor.cs" />
     <Compile Include="Assets\Scripts\Gravity\RocketAttractor.cs" />
-    <Compile Include="Assets\Scripts\Gun.cs" />
-    <Compile Include="Assets\Scripts\HealthComponent.cs" />
     <Compile Include="Assets\Scripts\Movement\PlanetMovement.cs" />
-    <Compile Include="Assets\Scripts\Planet.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\Rocket.cs" />
-    <Compile Include="Assets\Scripts\RocketDestroyer.cs" />
     <Compile Include="Assets\Scripts\Spawner\ASpawner.cs" />
     <Compile Include="Assets\Scripts\Spawner\PlanetSpawner.cs" />
+    <Compile Include="Assets\Scripts\UI\Billboard.cs" />
+    <Compile Include="Assets\Scripts\UI\HealthBarUI.cs" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>C:/Projects/Orbitality/Orbitality/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>

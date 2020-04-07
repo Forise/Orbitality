@@ -9,6 +9,8 @@ public class HealthComponent : MonoBehaviour
     private float maxHealth;
     [SerializeField]
     private float currentHealth;
+    [SerializeField]
+    private HealthBarUI healthBar;
 
     public float Health
     {
@@ -16,6 +18,8 @@ public class HealthComponent : MonoBehaviour
         set
         {
             currentHealth = value;
+            if(healthBar)
+                healthBar.Value = value;
             if(currentHealth <= 0)
             {
                 Died?.Invoke();
@@ -27,5 +31,10 @@ public class HealthComponent : MonoBehaviour
     public void Resetup()
     {
         currentHealth = maxHealth;
+        if (healthBar)
+        {
+            healthBar.Setup(maxHealth, 0);
+            healthBar.Value = currentHealth;
+        }
     }
 }

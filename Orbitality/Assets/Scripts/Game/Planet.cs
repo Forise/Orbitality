@@ -62,5 +62,6 @@ public class Planet : MonoBehaviour
     {
         planetMovement.moveAroundObject = sun;
         this.rocket = rocket;
+        healthComponent.Resetup();
     }
 }

@@ -8,8 +8,6 @@ public class Rocket : MonoBehaviour
     [SerializeField]
     private float mass;
     [SerializeField]
-    private float damage;
-    [SerializeField]
     private float force;
     [SerializeField]
     private float shootDelay;
