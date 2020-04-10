@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    #region Fields
     [SerializeField]
     private Transform spawnPoint;
     [SerializeField]
     private Transform directionPoint;
+    
+    public float rotationSpeed = 1f;
+    #endregion Fields
 
+    #region Methods
     public void Shot(Rocket rocket)
     {
 
@@ -19,4 +24,14 @@ public class Gun : MonoBehaviour
         //newRocket.rb.AddForce(direction.normalized * newRocket.Force, ForceMode2D.Force);
         newRocket.rb.velocity = direction.normalized * newRocket.Force;
     }
+
+    public void RotateLeft()
+    {
+        transform.RotateAround(transform.parent.position, new Vector3(0, 0, 1), 1f * rotationSpeed);
+    }
+    public void RotateRight()
+    {
+        transform.RotateAround(transform.parent.position, new Vector3(0, 0, 1), -1f * rotationSpeed);
+    }
+    #endregion Methods
 }

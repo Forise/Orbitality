@@ -4,28 +4,37 @@ using UnityEngine;
 
 public class PlanetMovement : MonoBehaviour
 {
-    private float speed;
+    #region Fields
+    private float movementSpeed;
+    private float rotationSpeed;
     [SerializeField]
     private float minSpeed = 0.1f;
     private float maxSpeed = 2f;
     public GameObject moveAroundObject;
+    #endregion Fields
 
+    #region Unity Methods
     private void Awake()
     {
-        speed = Random.Range(minSpeed, maxSpeed);
+        var rndSpeed = Random.Range(minSpeed, maxSpeed);
+        movementSpeed = rndSpeed;
+        rotationSpeed = rndSpeed;
     }
 
-    private void Move()
+    private void Update()
     {
-        transform.RotateAround(moveAroundObject.transform.position, Vector3.forward, 20 * Time.deltaTime * speed);
+        MoveAroundTarget();
+    }
+    #endregion Unity Methods
+
+    #region Methods
+    private void MoveAroundTarget()
+    {
+        transform.RotateAround(moveAroundObject.transform.position, Vector3.forward, 20 * Time.deltaTime * movementSpeed);
 
         Vector3 dir = moveAroundObject.transform.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
-
-    private void Update()
-    {
-        Move();
-    }
+    #endregion Methods
 }

@@ -20,5 +20,13 @@ public class Player : MonoBehaviour
             shotDelay = planet.Rocket.ShootDelay;
             planet.Gun.Shot(planet.Rocket);
         }
+        if(Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+        {
+            planet.Gun.RotateLeft();
+        }
+        if(Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow))
+        {
+            planet.Gun.RotateRight();
+        }
     }
 }
