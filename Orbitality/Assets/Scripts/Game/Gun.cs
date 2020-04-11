@@ -14,24 +14,37 @@ public class Gun : MonoBehaviour
     #endregion Fields
 
     #region Methods
-    public void Shot(Rocket rocket)
+    public void Shot(Rocket rocket, GameObject exceptionGO = null)
     {
         var direction = (directionPoint.position - spawnPoint.position);
-        var newRocket = Instantiate(rocket, spawnPoint.position, Quaternion.Euler(new Vector3(direction.x, direction.y, direction.z + 180)));
+        var newRocket = Instantiate(rocket, spawnPoint.position, Quaternion.identity, GameDriver.Instance.CurrentGame.transform);
         gameObject.GetComponentInParent<Attractor>().exeptions.Add(newRocket.gameObject);
         newRocket.damageComponent.ExceptionObject = transform.parent.gameObject;
+        newRocket.damageComponent.exceptionGO = exceptionGO;
+
+#if UNITY_EDITOR
         Debug.DrawRay(spawnPoint.position, direction.normalized * newRocket.Force, Color.yellow);
-        //newRocket.rb.AddForce(direction.normalized * newRocket.Force, ForceMode2D.Force);
+#endif
+
         newRocket.rb.velocity = direction.normalized * newRocket.Force;
     }
 
     public void RotateLeft()
     {
-        transform.RotateAround(transform.parent.position, new Vector3(0, 0, 1), 1f * rotationSpeed);
+        transform.RotateAround(transform.parent.position, Vector3.forward, 1f * rotationSpeed);
     }
     public void RotateRight()
     {
-        transform.RotateAround(transform.parent.position, new Vector3(0, 0, 1), -1f * rotationSpeed);
+        transform.RotateAround(transform.parent.position, Vector3.forward, -1f * rotationSpeed);
+    }
+
+    public void RotateTo(Transform target)
+    {
+        Vector3 dir = target.position - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
+
+        transform.localPosition = dir.normalized;
     }
     #endregion Methods
 }

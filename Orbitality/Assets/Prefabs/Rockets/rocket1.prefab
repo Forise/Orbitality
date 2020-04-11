@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 0.5
-  damage: 1
   force: 10.57
   shootDelay: 1
   autodestroyDelay: 200
+  damageComponent: {fileID: 0}
   rb: {fileID: 0}
 --- !u!70 &2522311924555689686
 CapsuleCollider2D:
@@ -169,3 +169,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  exceptionGO: {fileID: 0}

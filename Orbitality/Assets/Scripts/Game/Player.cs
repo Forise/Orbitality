@@ -9,7 +9,10 @@ public class Player : MonoBehaviour
     private void Start()
     {
         planet = GetComponent<Planet>();
-        shotDelay = planet.Rocket.ShootDelay;
+        if (planet.Rocket != null)
+        {
+            shotDelay = planet.Rocket.ShootDelay;
+        }
     }
 
     private void Update()
@@ -18,7 +21,7 @@ public class Player : MonoBehaviour
         if(Input.GetKey(KeyCode.Space) && shotDelay <= 0)
         {
             shotDelay = planet.Rocket.ShootDelay;
-            planet.Gun.Shot(planet.Rocket);
+            planet.Gun.Shot(planet.Rocket, gameObject);
         }
         if(Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
         {

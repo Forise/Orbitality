@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoSingleton<GameController>
+public class GameController : MonoBehaviour
 {
     #region Fields
     [SerializeField]

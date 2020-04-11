@@ -48,15 +48,6 @@ public class Planet : MonoBehaviour
         planetMovement = planetMovement ?? GetComponent<PlanetMovement>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        DamageComponent damageComponent = collision.gameObject.GetComponent<DamageComponent>();
-        if (damageComponent != null && damageComponent.ExceptionObject != gameObject)
-        {
-            healthComponent.Health -= damageComponent.damage;
-        }
-    }
-
     #endregion Unity Methods
     public void Setup(GameObject sun, Rocket rocket)
     {
