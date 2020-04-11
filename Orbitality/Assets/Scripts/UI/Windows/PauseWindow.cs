@@ -8,6 +8,8 @@ public class PauseWindow : UIWindow
     [SerializeField]
     private Button resumeGameButton;
     [SerializeField]
+    private Button saveGameButton;
+    [SerializeField]
     private Button startNewGameButton;
     [SerializeField]
     private Button exitButton;
@@ -15,6 +17,7 @@ public class PauseWindow : UIWindow
     private void OnEnable()
     {
         resumeGameButton.onClick.AddListener(OnResumeGameButtonPressed);
+        saveGameButton.onClick.AddListener(OnSaveGameButtonPressed);
         startNewGameButton.onClick.AddListener(OnStartNewGameButtonPressed);
         exitButton.onClick.AddListener(OnExitButtonPressed);
     }
@@ -22,6 +25,7 @@ public class PauseWindow : UIWindow
     private void OnDisable()
     {
         resumeGameButton.onClick.RemoveListener(OnResumeGameButtonPressed);
+        saveGameButton.onClick.RemoveListener(OnSaveGameButtonPressed);
         startNewGameButton.onClick.RemoveListener(OnStartNewGameButtonPressed);
         exitButton.onClick.RemoveListener(OnExitButtonPressed);
     }
@@ -37,6 +41,10 @@ public class PauseWindow : UIWindow
     {
         TimeScale.gameSclae = 1;
         CloseThisWindow();
+    }
+    private void OnSaveGameButtonPressed()
+    {
+        UIController.Instance.OpenWindow("apologise");
     }
     private void OnStartNewGameButtonPressed()
     {

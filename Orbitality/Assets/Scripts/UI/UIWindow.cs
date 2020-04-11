@@ -201,7 +201,10 @@ public class UIWindow : StateMachine
         {
             case AnimationType.Default:
                 timeToSwitch = Time.time + 0.3f;
-                StartCoroutine(Show());
+                if (gameObject.activeInHierarchy)
+                {
+                    StartCoroutine(Show());
+                }
                 //Debugger.LogWarning("Window using default animation", this.gameObject);
                 break;
             case AnimationType.OnOff:
