@@ -13,6 +13,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: f95cfe1ea8f73774a935befbc9666012,
         type: 3}
+    - target: {fileID: 2522311924555689681, guid: dc45b32d24c55ae43a189b95d7ad2aaf,
+        type: 3}
+      propertyPath: force
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522311924555689681, guid: dc45b32d24c55ae43a189b95d7ad2aaf,
+        type: 3}
+      propertyPath: mass
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522311924555689681, guid: dc45b32d24c55ae43a189b95d7ad2aaf,
+        type: 3}
+      propertyPath: shootDelay
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2522311924555689683, guid: dc45b32d24c55ae43a189b95d7ad2aaf,
         type: 3}
       propertyPath: m_LocalPosition.x
