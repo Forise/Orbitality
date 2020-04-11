@@ -171,6 +171,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 626730437039530532, guid: 94bc50118264aad4093688420030fbec,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1432664831200693895, guid: 94bc50118264aad4093688420030fbec,
         type: 3}
       propertyPath: m_Name
@@ -179,17 +184,17 @@ PrefabInstance:
     - target: {fileID: 1432664831200693895, guid: 94bc50118264aad4093688420030fbec,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5301696131651692227, guid: 94bc50118264aad4093688420030fbec,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5301696131651692227, guid: 94bc50118264aad4093688420030fbec,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5635985113432386280, guid: 94bc50118264aad4093688420030fbec,
         type: 3}

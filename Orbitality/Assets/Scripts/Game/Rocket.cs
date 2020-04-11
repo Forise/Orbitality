@@ -36,12 +36,12 @@ public class Rocket : MonoBehaviour
         Destroy(gameObject, autodestroyDelay);
     }
 
-    
+    private Vector3 vel;
     private void Update()
     {
-        float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z - 90);
+        float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg * TimeScale.gameSclae;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward * TimeScale.gameSclae);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z - 90 * TimeScale.gameSclae);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

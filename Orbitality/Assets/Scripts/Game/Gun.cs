@@ -26,23 +26,23 @@ public class Gun : MonoBehaviour
         Debug.DrawRay(spawnPoint.position, direction.normalized * newRocket.Force, Color.yellow);
 #endif
 
-        newRocket.rb.velocity = direction.normalized * newRocket.Force;
+        newRocket.rb.velocity = direction.normalized * newRocket.Force * TimeScale.gameSclae;
     }
 
     public void RotateLeft()
     {
-        transform.RotateAround(transform.parent.position, Vector3.forward, 1f * rotationSpeed);
+        transform.RotateAround(transform.parent.position, Vector3.forward, 1f * rotationSpeed * TimeScale.gameSclae);
     }
     public void RotateRight()
     {
-        transform.RotateAround(transform.parent.position, Vector3.forward, -1f * rotationSpeed);
+        transform.RotateAround(transform.parent.position, Vector3.forward, -1f * rotationSpeed * TimeScale.gameSclae);
     }
 
     public void RotateTo(Transform target)
     {
         Vector3 dir = target.position - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg * TimeScale.gameSclae;
+        transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward * TimeScale.gameSclae);
 
         transform.localPosition = dir.normalized;
     }

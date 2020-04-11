@@ -32,12 +32,8 @@ public class PlanetMovement : MonoBehaviour
     {
         if (moveAroundObject != null)
         {
-            transform.RotateAround(moveAroundObject.transform.position, Vector3.forward, 20 * Time.deltaTime * movementSpeed);
+            transform.RotateAround(moveAroundObject.transform.position, Vector3.forward, 20 * Time.deltaTime * movementSpeed * TimeScale.gameSclae);
             transform.rotation = Quaternion.identity;
-
-            //Vector3 dir = moveAroundObject.transform.position - transform.position;
-            //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
     #endregion Methods

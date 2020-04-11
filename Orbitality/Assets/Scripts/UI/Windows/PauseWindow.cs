@@ -29,13 +29,13 @@ public class PauseWindow : UIWindow
     protected override void OpenAnimationStateInitHandler()
     {
         base.OpenAnimationStateInitHandler();
-        //TODO: Set game TimeScale to 0;
+        TimeScale.gameSclae = 0;
     }
 
     #region Handlers
     private void OnResumeGameButtonPressed()
     {
-        //TODO: Set game TimeScale to 1;
+        TimeScale.gameSclae = 1;
         CloseThisWindow();
     }
     private void OnStartNewGameButtonPressed()

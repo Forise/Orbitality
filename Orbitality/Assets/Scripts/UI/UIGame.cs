@@ -10,6 +10,9 @@ public class UIGame : MonoSingleton<UIGame>
 
     private void Awake()
     {
-        pauseButton.onClick.AddListener(()=> { UIController.Instance.OpenWindow("pause", this); });
+        pauseButton.onClick.AddListener(()=> 
+        { 
+            UIController.Instance.OpenWindow("pause", this); 
+        });
     }
 }

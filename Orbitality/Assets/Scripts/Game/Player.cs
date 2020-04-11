@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    Planet planet;
+    private Planet planet;
+    private HealthComponent health;
     private float shotDelay = 0f;
     private void Start()
     {
-        planet = GetComponent<Planet>();
+        planet = gameObject.GetComponent<Planet>();
+        health = gameObject.GetComponent<HealthComponent>();
         if (planet.Rocket != null)
         {
             shotDelay = planet.Rocket.ShootDelay;
+        }
+        if(health != null)
+        {
+            health.Died += () => { GameDriver.Instance.EndCurrentGame(); };
         }
     }
 

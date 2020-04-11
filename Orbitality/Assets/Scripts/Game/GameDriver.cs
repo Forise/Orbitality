@@ -12,17 +12,15 @@ public class GameDriver : MonoSingleton<GameDriver>
     private GameController currentGame;
     public GameController CurrentGame => currentGame;
 
+
+    private void Start()
+    {
+        gameUI.gameObject.SetActive(false);
+    }
+
     public void StartNewGame()
     {
-        if (gamePrefab != null)
-        {
-            var newGame = Instantiate(gamePrefab);
-            currentGame = newGame;
-        }
-        else
-        {
-            Debug.LogError("GamePrefab is null!", this);
-        }
+        TimeScale.gameSclae = 1;
         if (mainUI != null)
         {
             mainUI.gameObject.SetActive(false);
@@ -38,6 +36,15 @@ public class GameDriver : MonoSingleton<GameDriver>
         else
         {
             Debug.LogError("gameUI is null!", this);
+        }
+        if (gamePrefab != null)
+        {
+            var newGame = Instantiate(gamePrefab);
+            currentGame = newGame;
+        }
+        else
+        {
+            Debug.LogError("GamePrefab is null!", this);
         }
     }
 

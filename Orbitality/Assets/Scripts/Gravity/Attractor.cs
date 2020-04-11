@@ -45,15 +45,15 @@ public class Attractor : MonoBehaviour
 			Rigidbody2D rbToAttract = objToAttract.rb;
 
 			Vector3 direction = rb.position - rbToAttract.position;
-			float distance = direction.magnitude;
+			float distance = direction.magnitude * TimeScale.gameSclae;
 
 			if (distance == 0f)
 				return;
 
-			float forceMagnitude = G * (rb.mass * rbToAttract.mass) / Mathf.Pow(distance, 2);
-			Vector3 force = direction.normalized * forceMagnitude;
+			float forceMagnitude = G * (rb.mass * rbToAttract.mass) / Mathf.Pow(distance, 2) * TimeScale.gameSclae;
+			Vector3 force = direction.normalized * forceMagnitude * TimeScale.gameSclae;
 
-			rbToAttract.AddForce(force);
+			rbToAttract.AddForce(force * TimeScale.gameSclae);
 		}
 	}
 }

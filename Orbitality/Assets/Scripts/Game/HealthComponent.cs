@@ -10,7 +10,7 @@ public class HealthComponent : MonoBehaviour
     [SerializeField]
     private float currentHealth;
     [SerializeField]
-    private HealthBarUI healthBar;
+    public HealthBarUI healthBar;
 
     public float Health
     {

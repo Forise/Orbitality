@@ -22,6 +22,12 @@ public class PlanetSpawner : MonoBehaviour
         var prefabs = prefabsPool;
         int rndPoint = Random.Range(0, pointsForSpawn.Count);
         var player = Instantiate(playerPrefab, pointsForSpawn[rndPoint]);
+        var playerHealth = player.gameObject.GetComponent<HealthComponent>();
+        if(playerHealth != null)
+        {
+            playerHealth.healthBar = UIGame.Instance.healthBarUI;
+            playerHealth.Resetup();
+        }
         player.Setup(sunGO, rockets[Random.Range(0, rockets.Count)]);
         spawnedPlanets.Add(player);
         pointsForSpawn.RemoveAt(rndPoint);
