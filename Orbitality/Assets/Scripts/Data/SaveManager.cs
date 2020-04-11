@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core
+public class SaveManager : MonoBehaviour
 {
-    public class SaveManager : MonoBehaviour
+    private List<ISavable> savables;
+    public string Path { get; private set; } = Application.persistentDataPath + "save.json";
+
+    private void Register(ISavable savable)
     {
-        private List<ISavable> savables;
+        savables.Add(savable);
+    }
 
-        private void Register(ISavable savable)
-        {
+    private void Unregister(ISavable savable)
+    {
+        savables.Remove(savable);
+    }
 
-        }
+    public void SaveLocal()
+    {
 
-        private void Unregister(ISavable savable)
-        {
-
-        }
     }
 }

@@ -1,8 +1,5 @@
-﻿namespace Core
+﻿public interface ISavable
 {
-    public interface ISavable
-    {
-        void Save();
-        void Load();
-    }
+    void Save();
+    void Load();
 }
