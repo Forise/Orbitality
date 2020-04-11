@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D)), RequireComponent(typeof(DamageComponent))]
 public class Rocket : MonoBehaviour
 {
     [SerializeField]
@@ -13,8 +13,10 @@ public class Rocket : MonoBehaviour
     private float shootDelay;
     [SerializeField]
     private float autodestroyDelay = 10f;
-    
+
+    public DamageComponent damageComponent;    
     public Rigidbody2D rb;
+
     public float Force => force;
     public float ShootDelay => shootDelay;
 
@@ -22,7 +24,11 @@ public class Rocket : MonoBehaviour
     {
         if(rb == null)
         {
-            rb = GetComponent<Rigidbody2D>();
+            rb = gameObject.GetComponent<Rigidbody2D>();
+        }
+        if(damageComponent == null)
+        {
+            damageComponent = gameObject.GetComponent<DamageComponent>();
         }
         rb.mass = mass;
         Destroy(gameObject, autodestroyDelay);

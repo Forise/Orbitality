@@ -51,7 +51,7 @@ public class Planet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         DamageComponent damageComponent = collision.gameObject.GetComponent<DamageComponent>();
-        if (damageComponent != null)
+        if (damageComponent != null && damageComponent.ExceptionObject != gameObject)
         {
             healthComponent.Health -= damageComponent.damage;
         }

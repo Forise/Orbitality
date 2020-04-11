@@ -11,6 +11,11 @@ public class Attractor : MonoBehaviour
 
 	public Rigidbody2D rb;
 
+	private void Update()
+	{
+		exeptions.RemoveAll(x => x == null);
+	}
+
 	private void FixedUpdate ()
 	{
 		foreach (Attractor attractor in Attractors)
